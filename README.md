@@ -56,16 +56,6 @@ npm run build:desktop
 
 This command runs the Tauri production build.
 
-## Project Structure
-
-```text
-.
-├─ src/                 # React frontend
-├─ src-tauri/           # Rust backend and Tauri configuration
-├─ package.json
-└─ README.md
-```
-
 ## Notes
 
 - The app stores documents directly on the local file system.
