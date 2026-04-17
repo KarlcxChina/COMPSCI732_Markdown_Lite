@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #1f2937;
+  background: #efebe4;
+  font-family: 'Avenir Next', 'Segoe UI Variable', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .toolbar {
+    @apply flex h-12 items-center justify-between gap-4 border-b border-stone-300 bg-[#efece4] px-4;
+  }
+
+  .toolbar-actions {
+    @apply flex items-center gap-2;
+  }
+
+  .toolbar-meta {
+    @apply flex min-w-0 items-center gap-4;
+  }
+
+  .toolbar-button {
+    @apply rounded-md bg-[#f3efe8] px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-[#e3ddd2] hover:text-slate-900;
+  }
+
+  .toolbar-button-primary {
+    @apply bg-[#9a3412] text-white hover:bg-[#7c2d12] hover:text-white;
+  }
+
+  .status-text {
+    @apply whitespace-nowrap text-xs uppercase tracking-[0.18em] text-slate-500;
+  }
+
+  .file-path {
+    @apply max-w-[42vw] truncate text-sm text-slate-700;
+  }
+
+  .workspace {
+    @apply grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] bg-[#efebe4] md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:grid-rows-1;
+  }
+
+  .editor-pane {
+    @apply flex min-h-0 flex-col bg-[#ebe7de];
+  }
+
+  .preview-pane {
+    @apply flex min-h-0 flex-col bg-[#f2eee7] md:border-l md:border-stone-300;
+  }
+
+  .pane-heading {
+    @apply flex h-11 items-center border-b border-stone-300 px-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600;
+  }
+
+  .editor {
+    @apply min-h-0 flex-1 resize-none border-none bg-[#e7e1d5] px-5 py-5 font-mono text-[15px] leading-7 text-ink outline-none;
+  }
+
+  .preview {
+    @apply min-h-0 flex-1 overflow-auto px-7 py-5 text-[15px] leading-7 text-slate-700;
+  }
+
+  .preview h1 {
+    @apply mb-4 text-4xl font-bold leading-tight text-slate-900;
+  }
+
+  .preview h2 {
+    @apply mb-3 mt-8 text-3xl font-semibold leading-tight text-slate-900;
+  }
+
+  .preview h3,
+  .preview h4,
+  .preview h5,
+  .preview h6 {
+    @apply mb-3 mt-6 text-xl font-semibold leading-tight text-slate-900;
+  }
+
+  .preview p,
+  .preview ul,
+  .preview ol,
+  .preview blockquote,
+  .preview pre {
+    @apply mb-4;
+  }
+
+  .preview ul {
+    @apply list-disc pl-6;
+  }
+
+  .preview ol {
+    @apply list-decimal pl-6;
+  }
+
+  .preview blockquote {
+    @apply border-l-2 border-[#c2410c] bg-[#f7efe1] px-4 py-3 italic text-slate-700;
+  }
+
+  .preview a {
+    @apply font-medium text-[#9a3412] underline underline-offset-4;
+  }
+
+  .preview strong {
+    @apply font-semibold text-slate-900;
+  }
+
+  .preview code {
+    @apply rounded-sm bg-[#f1ede6] px-1.5 py-0.5 font-mono text-[0.95em] text-slate-800;
+  }
+
+  .preview pre {
+    @apply overflow-auto bg-[#1f2937] p-4 text-slate-100;
+  }
+
+  .preview pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .empty-state {
+    @apply flex h-full min-h-[200px] items-center justify-center px-6 text-center text-slate-500;
+  }
+
+  .status-bar {
+    @apply flex h-10 items-center justify-between border-t border-stone-300 bg-[#ece8df] px-4 text-sm text-slate-600;
+  }
+}
+
+@media (max-width: 767px) {
+  @layer components {
+    .preview-pane {
+      @apply border-t border-l-0 border-stone-300;
+    }
+  }
+}
